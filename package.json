@@ -1,0 +1,15 @@
+{
+  "name": "chartroom",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "bun src/server.ts",
+    "client": "bun src/client.ts",
+    "test": "bun test tests"
+  },
+  "dependencies": {
+    "gbrain": "https://github.com/garrytan/gbrain/archive/5cfb84f1d3a809c70064c292c23db3d538d5c551.tar.gz"
+  }
+}

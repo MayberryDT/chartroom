@@ -1,0 +1,8 @@
+node_modules/
+.chartroom/
+.env
+.env.*
+!.env.example
+*.log
+*.token
+coverage/

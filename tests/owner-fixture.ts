@@ -1,0 +1,44 @@
+import assert from 'node:assert/strict';
+import {mkdtempSync,rmSync,writeFileSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {PGLiteEngine} from '../node_modules/gbrain/src/core/pglite-engine.ts';
+import {operations} from '../node_modules/gbrain/src/core/operations.ts';
+import {__setJudgeForTests} from '../src/jev-judgment.ts';
+import {enrichCapturedPage,drainJevWork,installJevEnrichment} from '../src/jev-enrichment.ts';
+import {enqueueJevWork} from '../src/jev-work.ts';
+const root=mkdtempSync(join(tmpdir(),'chartroom-owner-fixture-'));const engine=new PGLiteEngine();
+const saved=operations.map(o=>[o,o.handler] as const);
+try{
+ await engine.connect({engine:'pglite',database_path:join(root,'database')});await engine.initSchema();
+ const page={type:'concept' as const,title:'Receipt recovery',compiled_truth:'GBrain uses owner receipts to recover graph publication after interruptions.',timeline:''};
+ for(const slug of ['sessions/a','sessions/b','topics/receipts'])await engine.putPage(slug,page);
+ const get=operations.find(o=>o.name==='get_page')!;get.handler=async(ctx,p)=>ctx.engine.getPage(String(p.slug),{sourceId:String(p.source_id)});
+ const search=operations.find(o=>o.name==='search')!;search.handler=async(_ctx,p)=>String(p.query).includes(' OR ')?[{slug:'topics/receipts',source_id:'default',chunk_text:page.compiled_truth}]:[{slug:'sessions/a',source_id:'default',chunk_text:page.compiled_truth}];
+ __setJudgeForTests(async(req:any)=>({ok:true,response:{model:req.model,answers:Object.fromEntries(Object.entries(req.questions).map(([key,q]:any)=>[key,q.type==='choice'?{choice:'source'}:{score:4}])),usage:{input_tokens:1,output_tokens:1}},cache:'miss'}));
+ const ctx:any={engine,auth:{sourceId:'default',allowedSources:['default']}};
+ const first=await enrichCapturedPage(ctx,{}, {slug:'sessions/a'});
+ assert.equal(first.jev.outcome,'applied');assert.equal(first.jev.connections,1);
+ const second=await enrichCapturedPage(ctx,{}, {slug:'sessions/b'});assert.equal(second.jev.outcome,'applied');
+ assert.notEqual(first.jev.work_id,second.jev.work_id);
+ assert.equal((await drainJevWork(ctx)).processed,0,'completed work is not republished');
+ const source=(await engine.getPage('sessions/a'))!;const target=(await engine.getPage('topics/receipts'))!;
+ const work=await enqueueJevWork(engine,{question_id:'fixture',feature:'capture_connections',identities:['default:sessions/a'],decision:{packet:{batch_id:'stale-fixture',items:[{id:'stale-edge',from:{source_id:'default',slug:'sessions/a'},to:{source_id:'default',slug:'topics/receipts'},provenance:'jev-capture',expected_from_revision:source.content_hash,expected_to_revision:target.content_hash}]}},state:'queued'});
+ await engine.putPage('sessions/a',{...page,compiled_truth:'Changed source evidence.'});
+ const stale=await drainJevWork(ctx,work.id);assert.equal(stale.results[0].verified,false);assert.equal(stale.results[0].state,'failed');
+ installJevEnrichment();const status=operations.find(o=>o.name==='maintenance_jev_status')!;
+ const foreign:any=await status.handler({...ctx,auth:{sourceId:'other',allowedSources:['other']}},{});assert.deepEqual(foreign.counts,{});
+ const stored=await engine.executeRaw<any>('SELECT decision FROM maintenance_jev_work WHERE id=$1',[first.jev.work_id]);
+ const {applyLinkBatch}=await import('../src/link-batch.ts');
+ await assert.rejects(applyLinkBatch(engine,{...ctx,auth:{sourceId:'other',allowedSources:['default','other']}},stored[0].decision.packet),/receipt_scope_denied/);
+ const links=await engine.executeRaw<any>("SELECT count(*)::int n FROM links WHERE link_source='jev-capture'");assert.equal(links[0].n,2);
+ // Persist queued work, close the actual owner, reopen and resume without a model call.
+ const fresh=(await engine.getPage('sessions/a'))!;
+ await enqueueJevWork(engine,{question_id:'resume-fixture',feature:'capture_connections',identities:['default:sessions/a'],decision:{packet:{batch_id:'restart-fixture',items:[{id:'restart-edge',from:{source_id:'default',slug:'sessions/a'},to:{source_id:'default',slug:'topics/receipts'},provenance:'resume-fixture',expected_from_revision:fresh.content_hash,expected_to_revision:target.content_hash}]}},state:'queued'});
+ await engine.disconnect();
+ await engine.connect({engine:'pglite',database_path:join(root,'database')});await engine.initSchema();
+ __setJudgeForTests(async()=>{throw Error('resume must not invoke Jev');});
+ assert.equal((await drainJevWork(ctx)).results[0].verified,true);
+ assert.equal((await drainJevWork(ctx)).processed,0);
+ console.log('owner integration passed: graph publication, source isolation, stale rejection, restart/resume without model calls');
+}finally{__setJudgeForTests(null);for(const [op,handler] of saved)op.handler=handler;await engine.disconnect();rmSync(root,{recursive:true,force:true});}
