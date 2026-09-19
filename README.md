@@ -1,8 +1,40 @@
 # Chartroom
 
-A local second brain built on [GBrain](https://github.com/garrytan/gbrain), with [TypeSafe Jev](https://typesafe.ai) for relevance judgments and useful page connections. MIT licensed.
+![Chartroom — an illustrated map of connected knowledge](assets/chartroom-banner.png)
 
-This preview packages the working retrieval, capture, conditional graph publication, work history and bounded resume integration. It runs a single local GBrain owner. Your documents and receipts stay in your chosen data directory; configured model providers receive the text needed for their calls.
+A local second brain built on [GBrain](https://github.com/garrytan/gbrain), with [TypeSafe Jev](https://typesafe.ai) for better search ranking and useful page connections. MIT licensed.
+
+Save a note. Find the right source. Follow connections to related pages. Chartroom uses Jev to judge relevance, then records connection changes and their history so you can inspect what happened.
+
+Your documents and receipts stay in your local data directory. Configured model providers receive the text needed for their calls. Bring your own API keys.
+
+## A small comparison
+
+Same 30 synthetic notes, same 20 questions, same GBrain version. Jev off versus Jev on:
+
+![Synthetic retrieval comparison: correct first result improves from 17 of 20 to 20 of 20; correct result in the first three improves from 19 of 20 to 20 of 20](assets/comparison.png)
+
+| Measure | Jev off | Jev on |
+| --- | ---: | ---: |
+| Correct first search result | 17/20 | **20/20** |
+| Correct result in the first three | 19/20 | **20/20** |
+| Automatically added connections | 0 | **24** |
+| First-pass median search time | 34 ms | 150 ms |
+
+23 of the 24 connections met the preset relevance rules, including 13 navigation links. Jev found 10 of 18 expected relationships; two enrichment calls failed validation, while their documents were still saved. The accounted Jev estimate was **$0.00446**, excluding unknown usage from rejected responses. Cached searches took about 31–35 ms.
+
+This is a small synthetic demonstration, not a general accuracy claim. [Read the results and limitations](benchmarks/RESULTS.md) or [reproduce the comparison](benchmarks/compare.py).
+
+## How it works
+
+![Concept illustration of related paper notes connected by routes, with unrelated notes left separate](assets/chartroom-connections.png)
+
+*Concept illustration; Chartroom currently runs through MCP and the command line.*
+
+1. **Capture:** save a document in GBrain.
+2. **Judge:** Jev scores retrieved passages and candidate page connections.
+3. **Connect:** Chartroom checks page revisions, publishes selected links and records receipts.
+4. **Inspect:** read the history or resume queued graph work without repeating the model judgment.
 
 ## Quickstart
 
