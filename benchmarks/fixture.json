@@ -1,0 +1,579 @@
+{
+  "version": 1,
+  "description": "Synthetic demonstration, authored and labels frozen before measurement. No private documents. Query relevance means directly answers the requested current or historical fact, not mere topic overlap.",
+  "documents": [
+    {
+      "slug": "notes/harbor-policy",
+      "topic": "harbor",
+      "kind": "policy",
+      "title": "Harbor sensor calibration policy",
+      "content": "---\ntitle: Harbor sensor calibration policy\ntype: note\n---\n\nCurrent policy, effective 2026-08-01: Harbor sensor calibration interval is monthly. Compare each sensor with a certified reference. Replace any probe differing by more than 0.5 degrees Celsius. This replaces the 2025 quarterly interval.\n"
+    },
+    {
+      "slug": "notes/harbor-incident",
+      "topic": "harbor",
+      "kind": "incident",
+      "title": "Harbor sensor inspection September 2026",
+      "content": "---\ntitle: Harbor sensor inspection September 2026\ntype: note\n---\n\nHarbor sensor calibration inspection on 2026-09-05: sensor A differed by 0.2 degrees; sensor B differed by 0.8 degrees Celsius. Sensor B requires replacement under the current 0.5-degree threshold. Repeat the calibration monthly.\n"
+    },
+    {
+      "slug": "notes/harbor-archive",
+      "topic": "harbor",
+      "kind": "archive",
+      "title": "Harbor calibration archive 2025",
+      "content": "---\ntitle: Harbor calibration archive 2025\ntype: note\n---\n\nHistorical policy dated 2025-02-01, superseded on 2026-08-01. Harbor sensor calibration interval was quarterly, with replacement above 1.0 degrees Celsius. Do not use this archived interval for current maintenance.\n"
+    },
+    {
+      "slug": "notes/harbor-index",
+      "topic": "harbor",
+      "kind": "index",
+      "title": "Harbor calibration reading index",
+      "content": "---\ntitle: Harbor calibration reading index\ntype: note\n---\n\nHarbor sensor calibration interval, calibration policy, calibration inspection and calibration archive are covered in separate notes. This index lists those subjects but contains no approved interval or replacement decision.\n"
+    },
+    {
+      "slug": "notes/harbor-decoy",
+      "topic": "harbor",
+      "kind": "decoy",
+      "title": "Harbor theater rehearsal calibration",
+      "content": "---\ntitle: Harbor theater rehearsal calibration\ntype: note\n---\n\nHarbor is the name of a theater production, unrelated to the sensor project. Actors call their quarterly voice rehearsal calibration. Sensor B is a fictional character, not an instrument. There is no hardware replacement policy here.\n"
+    },
+    {
+      "slug": "notes/cedar-policy",
+      "topic": "cedar",
+      "kind": "policy",
+      "title": "Cedar backup retention policy",
+      "content": "---\ntitle: Cedar backup retention policy\ntype: note\n---\n\nCurrent Cedar backup retention policy, effective 2026-07-01: retain nightly backups for 35 days and monthly snapshots for 12 months. Restore drills run every month. The previous seven-day nightly retention is superseded.\n"
+    },
+    {
+      "slug": "notes/cedar-incident",
+      "topic": "cedar",
+      "kind": "incident",
+      "title": "Cedar backup restore drill September",
+      "content": "---\ntitle: Cedar backup restore drill September\ntype: note\n---\n\nCedar backup restore drill on 2026-09-07 completed in 18 minutes. Checksum verification passed for all 240 files. The approved recovery-time objective is 30 minutes; this drill met it. Retention settings were unchanged.\n"
+    },
+    {
+      "slug": "notes/cedar-archive",
+      "topic": "cedar",
+      "kind": "archive",
+      "title": "Cedar backup retention archive 2025",
+      "content": "---\ntitle: Cedar backup retention archive 2025\ntype: note\n---\n\nCedar backup retention policy in 2025 kept nightly backups for seven days and monthly snapshots for six months. This historical policy expired on 2026-07-01. It does not describe current retention.\n"
+    },
+    {
+      "slug": "notes/cedar-index",
+      "topic": "cedar",
+      "kind": "index",
+      "title": "Cedar backup retention and restore index",
+      "content": "---\ntitle: Cedar backup retention and restore index\ntype: note\n---\n\nCedar backup retention, backup restore, restore drill results and retention archives have their own notes. This index provides topic names, not retention durations or drill measurements.\n"
+    },
+    {
+      "slug": "notes/cedar-decoy",
+      "topic": "cedar",
+      "kind": "decoy",
+      "title": "Cedar furniture restoration workshop",
+      "content": "---\ntitle: Cedar furniture restoration workshop\ntype: note\n---\n\nCedar restoration restores wooden chairs, not database backups. A backup chair is kept in storage while varnish dries for seven days. Workshop retention refers to retaining original timber.\n"
+    },
+    {
+      "slug": "notes/atlas-policy",
+      "topic": "atlas",
+      "kind": "policy",
+      "title": "Atlas launch approval checklist",
+      "content": "---\ntitle: Atlas launch approval checklist\ntype: note\n---\n\nAtlas software launch policy approved 2026-08-20: production launch requires sign-off from both the security lead and the support lead. The release manager records both approvals. One manager alone cannot authorize launch.\n"
+    },
+    {
+      "slug": "notes/atlas-incident",
+      "topic": "atlas",
+      "kind": "incident",
+      "title": "Atlas launch postponed September",
+      "content": "---\ntitle: Atlas launch postponed September\ntype: note\n---\n\nAtlas software launch review on 2026-09-10 postponed release because the support lead had not signed off. Security approval was already recorded. A missing support approval, not a security failure, blocked the launch.\n"
+    },
+    {
+      "slug": "notes/atlas-archive",
+      "topic": "atlas",
+      "kind": "archive",
+      "title": "Atlas launch approval archive 2025",
+      "content": "---\ntitle: Atlas launch approval archive 2025\ntype: note\n---\n\nAtlas software launch approval policy in 2025 required only the release manager. This rule was superseded on 2026-08-20 by mandatory security and support sign-off.\n"
+    },
+    {
+      "slug": "notes/atlas-index",
+      "topic": "atlas",
+      "kind": "index",
+      "title": "Atlas launch approval reading index",
+      "content": "---\ntitle: Atlas launch approval reading index\ntype: note\n---\n\nAtlas launch approval, launch checklist, launch review and launch approval archive are indexed here. Consult the relevant policy or dated review for who approves and what blocked a release.\n"
+    },
+    {
+      "slug": "notes/atlas-decoy",
+      "topic": "atlas",
+      "kind": "decoy",
+      "title": "Atlas rocket launch club",
+      "content": "---\ntitle: Atlas rocket launch club\ntype: note\n---\n\nAtlas rocket club schedules model rocket launches in a park. Launch approval comes from the park ranger. This club has no software security lead or customer support lead and is unrelated to the Atlas software project.\n"
+    },
+    {
+      "slug": "notes/juniper-policy",
+      "topic": "juniper",
+      "kind": "policy",
+      "title": "Juniper greenhouse watering policy",
+      "content": "---\ntitle: Juniper greenhouse watering policy\ntype: note\n---\n\nCurrent Juniper greenhouse watering policy, effective 2026-06-01: water seed trays when soil moisture falls below 30 percent. Check moisture each morning; do not water on a fixed daily schedule. Outdoor orchard irrigation is managed separately.\n"
+    },
+    {
+      "slug": "notes/juniper-incident",
+      "topic": "juniper",
+      "kind": "incident",
+      "title": "Juniper greenhouse tray inspection",
+      "content": "---\ntitle: Juniper greenhouse tray inspection\ntype: note\n---\n\nJuniper greenhouse inspection on 2026-09-08 found tray C at 22 percent soil moisture and tray D at 38 percent. Water tray C only. Tray D is above the 30 percent watering threshold.\n"
+    },
+    {
+      "slug": "notes/juniper-archive",
+      "topic": "juniper",
+      "kind": "archive",
+      "title": "Juniper greenhouse watering archive 2025",
+      "content": "---\ntitle: Juniper greenhouse watering archive 2025\ntype: note\n---\n\nJuniper greenhouse watering in 2025 followed a fixed daily schedule at 08:00. That policy was superseded on 2026-06-01 by a soil-moisture threshold. The old daily schedule is historical only.\n"
+    },
+    {
+      "slug": "notes/juniper-index",
+      "topic": "juniper",
+      "kind": "index",
+      "title": "Juniper greenhouse watering index",
+      "content": "---\ntitle: Juniper greenhouse watering index\ntype: note\n---\n\nJuniper greenhouse watering policy, watering schedule archive and greenhouse tray inspection are separate records. This index repeats their names but does not specify when to water.\n"
+    },
+    {
+      "slug": "notes/juniper-decoy",
+      "topic": "juniper",
+      "kind": "decoy",
+      "title": "Juniper orchard watering plan",
+      "content": "---\ntitle: Juniper orchard watering plan\ntype: note\n---\n\nJuniper outdoor orchard watering runs each Tuesday for 45 minutes. Orchard trees use a drip line. These outdoor trees are separate from greenhouse seed trays; the greenhouse moisture threshold does not apply.\n"
+    },
+    {
+      "slug": "notes/relay-policy",
+      "topic": "relay",
+      "kind": "policy",
+      "title": "Relay API token expiration policy",
+      "content": "---\ntitle: Relay API token expiration policy\ntype: note\n---\n\nCurrent Relay API token policy effective 2026-05-01: access tokens expire after 15 minutes. Refresh tokens expire after seven days and are rotated on every use. Reuse of a rotated refresh token revokes the session.\n"
+    },
+    {
+      "slug": "notes/relay-incident",
+      "topic": "relay",
+      "kind": "incident",
+      "title": "Relay API token reuse incident",
+      "content": "---\ntitle: Relay API token reuse incident\ntype: note\n---\n\nRelay API incident on 2026-09-09: a client reused an already rotated refresh token. The service revoked the session as designed. The remedy is to store the latest refresh token atomically, not to lengthen access-token expiry.\n"
+    },
+    {
+      "slug": "notes/relay-archive",
+      "topic": "relay",
+      "kind": "archive",
+      "title": "Relay API token expiration archive 2025",
+      "content": "---\ntitle: Relay API token expiration archive 2025\ntype: note\n---\n\nRelay API access-token expiration in 2025 was 24 hours. This historical policy was superseded on 2026-05-01. Refresh tokens were not rotated in that old implementation.\n"
+    },
+    {
+      "slug": "notes/relay-index",
+      "topic": "relay",
+      "kind": "index",
+      "title": "Relay API token expiration index",
+      "content": "---\ntitle: Relay API token expiration index\ntype: note\n---\n\nRelay API token expiration policy, refresh-token reuse incident and token expiration archive are listed here. This overview contains no authoritative duration or remediation procedure.\n"
+    },
+    {
+      "slug": "notes/relay-decoy",
+      "topic": "relay",
+      "kind": "decoy",
+      "title": "Relay race token handoff",
+      "content": "---\ntitle: Relay race token handoff\ntype: note\n---\n\nA Relay race game passes a wooden token between runners. A token expires when a runner leaves the course. This game has no API, access tokens or refresh credentials and is unrelated to Relay software.\n"
+    },
+    {
+      "slug": "notes/lantern-policy",
+      "topic": "lantern",
+      "kind": "policy",
+      "title": "Lantern onboarding access policy",
+      "content": "---\ntitle: Lantern onboarding access policy\ntype: note\n---\n\nCurrent Lantern staff onboarding policy effective 2026-04-01: a manager approves access, then IT creates the account. Security training must be completed within five business days. Contractors receive time-limited accounts reviewed after 30 days.\n"
+    },
+    {
+      "slug": "notes/lantern-incident",
+      "topic": "lantern",
+      "kind": "incident",
+      "title": "Lantern contractor onboarding review",
+      "content": "---\ntitle: Lantern contractor onboarding review\ntype: note\n---\n\nLantern contractor onboarding review on 2026-09-11: account L-17 reached its 30-day review with no manager renewal. IT disabled L-17 pending renewed approval. Training had already been completed; missing renewal caused the disablement.\n"
+    },
+    {
+      "slug": "notes/lantern-archive",
+      "topic": "lantern",
+      "kind": "archive",
+      "title": "Lantern onboarding training archive 2025",
+      "content": "---\ntitle: Lantern onboarding training archive 2025\ntype: note\n---\n\nLantern onboarding policy in 2025 allowed ten business days for security training. That historical deadline was replaced on 2026-04-01 with five business days. It is not the current deadline.\n"
+    },
+    {
+      "slug": "notes/lantern-index",
+      "topic": "lantern",
+      "kind": "index",
+      "title": "Lantern onboarding access training index",
+      "content": "---\ntitle: Lantern onboarding access training index\ntype: note\n---\n\nLantern onboarding access policy, onboarding training archive and contractor onboarding review are listed here. This index has no approved deadline or individual access decision.\n"
+    },
+    {
+      "slug": "notes/lantern-decoy",
+      "topic": "lantern",
+      "kind": "decoy",
+      "title": "Lantern festival volunteer onboarding",
+      "content": "---\ntitle: Lantern festival volunteer onboarding\ntype: note\n---\n\nLantern festival volunteer onboarding consists of a safety walk on event day. Volunteers do not receive IT accounts. This community festival is unrelated to Lantern staff and contractor onboarding.\n"
+    }
+  ],
+  "queries": [
+    {
+      "id": "q01",
+      "query": "Harbor sensor calibration interval",
+      "expected": [
+        "notes/harbor-policy"
+      ]
+    },
+    {
+      "id": "q02",
+      "query": "Harbor calibration 2025 interval",
+      "expected": [
+        "notes/harbor-archive"
+      ]
+    },
+    {
+      "id": "q03",
+      "query": "Harbor sensor B replacement",
+      "expected": [
+        "notes/harbor-incident"
+      ]
+    },
+    {
+      "id": "q04",
+      "query": "Cedar backup retention nightly",
+      "expected": [
+        "notes/cedar-policy"
+      ]
+    },
+    {
+      "id": "q05",
+      "query": "Cedar backup retention 2025",
+      "expected": [
+        "notes/cedar-archive"
+      ]
+    },
+    {
+      "id": "q06",
+      "query": "Cedar backup restore drill minutes",
+      "expected": [
+        "notes/cedar-incident"
+      ]
+    },
+    {
+      "id": "q07",
+      "query": "Atlas software launch approval required",
+      "expected": [
+        "notes/atlas-policy"
+      ]
+    },
+    {
+      "id": "q08",
+      "query": "Atlas launch approval 2025",
+      "expected": [
+        "notes/atlas-archive"
+      ]
+    },
+    {
+      "id": "q09",
+      "query": "Atlas launch postponed support",
+      "expected": [
+        "notes/atlas-incident"
+      ]
+    },
+    {
+      "id": "q10",
+      "query": "Juniper greenhouse watering threshold",
+      "expected": [
+        "notes/juniper-policy"
+      ]
+    },
+    {
+      "id": "q11",
+      "query": "Juniper greenhouse watering 2025",
+      "expected": [
+        "notes/juniper-archive"
+      ]
+    },
+    {
+      "id": "q12",
+      "query": "Juniper greenhouse tray C moisture",
+      "expected": [
+        "notes/juniper-incident"
+      ]
+    },
+    {
+      "id": "q13",
+      "query": "Relay API access token expiration",
+      "expected": [
+        "notes/relay-policy"
+      ]
+    },
+    {
+      "id": "q14",
+      "query": "Relay API token expiration 2025",
+      "expected": [
+        "notes/relay-archive"
+      ]
+    },
+    {
+      "id": "q15",
+      "query": "Relay API refresh token reuse remedy",
+      "expected": [
+        "notes/relay-incident"
+      ]
+    },
+    {
+      "id": "q16",
+      "query": "Lantern onboarding security training deadline",
+      "expected": [
+        "notes/lantern-policy"
+      ]
+    },
+    {
+      "id": "q17",
+      "query": "Lantern onboarding training 2025 deadline",
+      "expected": [
+        "notes/lantern-archive"
+      ]
+    },
+    {
+      "id": "q18",
+      "query": "Lantern contractor L-17 disabled renewal",
+      "expected": [
+        "notes/lantern-incident"
+      ]
+    },
+    {
+      "id": "q19",
+      "query": "How long can a Relay login stay valid before its access credential expires?",
+      "expected": [
+        "notes/relay-policy"
+      ]
+    },
+    {
+      "id": "q20",
+      "query": "Which Juniper seed tray needs irrigation after the September inspection?",
+      "expected": [
+        "notes/juniper-incident"
+      ]
+    }
+  ],
+  "expected_connections": [
+    [
+      "notes/harbor-policy",
+      "notes/harbor-incident"
+    ],
+    [
+      "notes/harbor-policy",
+      "notes/harbor-archive"
+    ],
+    [
+      "notes/harbor-incident",
+      "notes/harbor-archive"
+    ],
+    [
+      "notes/cedar-policy",
+      "notes/cedar-incident"
+    ],
+    [
+      "notes/cedar-policy",
+      "notes/cedar-archive"
+    ],
+    [
+      "notes/cedar-incident",
+      "notes/cedar-archive"
+    ],
+    [
+      "notes/atlas-policy",
+      "notes/atlas-incident"
+    ],
+    [
+      "notes/atlas-policy",
+      "notes/atlas-archive"
+    ],
+    [
+      "notes/atlas-incident",
+      "notes/atlas-archive"
+    ],
+    [
+      "notes/juniper-policy",
+      "notes/juniper-incident"
+    ],
+    [
+      "notes/juniper-policy",
+      "notes/juniper-archive"
+    ],
+    [
+      "notes/juniper-incident",
+      "notes/juniper-archive"
+    ],
+    [
+      "notes/relay-policy",
+      "notes/relay-incident"
+    ],
+    [
+      "notes/relay-policy",
+      "notes/relay-archive"
+    ],
+    [
+      "notes/relay-incident",
+      "notes/relay-archive"
+    ],
+    [
+      "notes/lantern-policy",
+      "notes/lantern-incident"
+    ],
+    [
+      "notes/lantern-policy",
+      "notes/lantern-archive"
+    ],
+    [
+      "notes/lantern-incident",
+      "notes/lantern-archive"
+    ]
+  ],
+  "acceptable_connections": [
+    [
+      "notes/harbor-policy",
+      "notes/harbor-incident"
+    ],
+    [
+      "notes/harbor-policy",
+      "notes/harbor-archive"
+    ],
+    [
+      "notes/harbor-policy",
+      "notes/harbor-index"
+    ],
+    [
+      "notes/harbor-incident",
+      "notes/harbor-archive"
+    ],
+    [
+      "notes/harbor-incident",
+      "notes/harbor-index"
+    ],
+    [
+      "notes/harbor-archive",
+      "notes/harbor-index"
+    ],
+    [
+      "notes/cedar-policy",
+      "notes/cedar-incident"
+    ],
+    [
+      "notes/cedar-policy",
+      "notes/cedar-archive"
+    ],
+    [
+      "notes/cedar-policy",
+      "notes/cedar-index"
+    ],
+    [
+      "notes/cedar-incident",
+      "notes/cedar-archive"
+    ],
+    [
+      "notes/cedar-incident",
+      "notes/cedar-index"
+    ],
+    [
+      "notes/cedar-archive",
+      "notes/cedar-index"
+    ],
+    [
+      "notes/atlas-policy",
+      "notes/atlas-incident"
+    ],
+    [
+      "notes/atlas-policy",
+      "notes/atlas-archive"
+    ],
+    [
+      "notes/atlas-policy",
+      "notes/atlas-index"
+    ],
+    [
+      "notes/atlas-incident",
+      "notes/atlas-archive"
+    ],
+    [
+      "notes/atlas-incident",
+      "notes/atlas-index"
+    ],
+    [
+      "notes/atlas-archive",
+      "notes/atlas-index"
+    ],
+    [
+      "notes/juniper-policy",
+      "notes/juniper-incident"
+    ],
+    [
+      "notes/juniper-policy",
+      "notes/juniper-archive"
+    ],
+    [
+      "notes/juniper-policy",
+      "notes/juniper-index"
+    ],
+    [
+      "notes/juniper-incident",
+      "notes/juniper-archive"
+    ],
+    [
+      "notes/juniper-incident",
+      "notes/juniper-index"
+    ],
+    [
+      "notes/juniper-archive",
+      "notes/juniper-index"
+    ],
+    [
+      "notes/relay-policy",
+      "notes/relay-incident"
+    ],
+    [
+      "notes/relay-policy",
+      "notes/relay-archive"
+    ],
+    [
+      "notes/relay-policy",
+      "notes/relay-index"
+    ],
+    [
+      "notes/relay-incident",
+      "notes/relay-archive"
+    ],
+    [
+      "notes/relay-incident",
+      "notes/relay-index"
+    ],
+    [
+      "notes/relay-archive",
+      "notes/relay-index"
+    ],
+    [
+      "notes/lantern-policy",
+      "notes/lantern-incident"
+    ],
+    [
+      "notes/lantern-policy",
+      "notes/lantern-archive"
+    ],
+    [
+      "notes/lantern-policy",
+      "notes/lantern-index"
+    ],
+    [
+      "notes/lantern-incident",
+      "notes/lantern-archive"
+    ],
+    [
+      "notes/lantern-incident",
+      "notes/lantern-index"
+    ],
+    [
+      "notes/lantern-archive",
+      "notes/lantern-index"
+    ]
+  ],
+  "connection_rubric": "Edges are evaluated undirected. Expected pairs join policy, incident and archive within the same project (18). Index-to-project links are also acceptable (18); index pages are useful navigation but not correct search answers. Decoys and cross-project edges need independent review and default to incorrect. Expected pairs are a selected coverage list, not all possible useful links."
+}
