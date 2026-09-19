@@ -71,7 +71,7 @@ Use `bun run client call <tool> '<json>'` for other upstream MCP tools. Whole-pa
 
 This is a working preview, not a finished autonomous maintenance system. General fact/entity/contradiction enrichment, automatic prose editing, the private editorial controller and the personal Android viewer are not included. Captured role classification is an annotation, not an automatic type migration. Semantic links can be wrong; inspect their evidence and history.
 
-Jev being unavailable does not undo a saved capture. The response exposes the enrichment failure; search retains its baseline results. Existing approved capture graph packets can be resumed with Jev disabled. No public benchmark results are claimed yet.
+Jev being unavailable does not undo a saved capture. The response exposes the enrichment failure; search retains its baseline results. Existing approved capture graph packets can be resumed with Jev disabled. A small synthetic Jev off/on comparison is available in [benchmarks/RESULTS.md](benchmarks/RESULTS.md); it is not a general benchmark.
 
 The integration's native usage record does not include embedding or other provider costs. Model keys and document content are not included in public examples or test fixtures.
 
