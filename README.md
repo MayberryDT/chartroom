@@ -86,7 +86,7 @@ Stop with Ctrl+C. Start the same directory again to retain documents, the token,
 
 The owner binds to loopback only. This preview is for local use; it does not configure remote hosting. Do not point `CHARTROOM_HOME` at an existing live GBrain installation. No personal credential directories are searched. Keep `.env` and the data directory private.
 
-Jev is pinned to `jev-1.13.0`; GBrain is pinned to v0.48.2.0, commit `5cfb84f1d3a809c70064c292c23db3d538d5c551`. Internal upstream hooks are coupled to this revision. Do not change the core version without retesting.
+Jev is pinned to `jev-1.13.0`; GBrain is pinned to v0.48.2.0 plus the compact presentation patch, commit `2c332f7759d84a1862cf06bb39b520fedb051d9a`. That commit is upstream `5cfb84f1d3a809c70064c292c23db3d538d5c551` with the presentation change. Internal upstream hooks stay coupled to that revision. Do not change the core version without retesting.
 
 ## What is included
 

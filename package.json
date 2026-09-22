@@ -10,6 +10,6 @@
     "test": "bun test tests"
   },
   "dependencies": {
-    "gbrain": "https://github.com/garrytan/gbrain/archive/5cfb84f1d3a809c70064c292c23db3d538d5c551.tar.gz"
+    "gbrain": "https://github.com/MayberryDT/gbrain/archive/2c332f7759d84a1862cf06bb39b520fedb051d9a.tar.gz"
   }
 }
