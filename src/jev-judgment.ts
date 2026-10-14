@@ -106,7 +106,8 @@ export async function judge(request: JudgmentRequest, opts?: {
     try {
       const token = loadKey();
       if (!token) return {ok: false as const, failure: 'configuration' as const, error_class: 'missing_credential'};
-      const res = await fetch(JEV_ENDPOINT, {
+      const endpoint = process.env.TYPESAFE_ENDPOINT || JEV_ENDPOINT;
+      const res = await fetch(endpoint, {
         method: 'POST',
         headers: {Authorization: `Bearer ${token}`, 'Content-Type': 'application/json'},
         body: JSON.stringify(request),
