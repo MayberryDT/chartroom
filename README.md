@@ -81,6 +81,7 @@ Stop with Ctrl+C. Start the same directory again to retain documents, the token,
 | `CHARTROOM_PORT` | `3141` | Loopback HTTP port |
 | `CHARTROOM_JEV` | `on` | Set `off` for baseline operation without new Jev judgments |
 | `TYPESAFE_API_KEY` | unset | Jev API key |
+| `TYPESAFE_ENDPOINT` | TypeSafe hosted API | Optional Jev endpoint override (also used by local benchmark replay) |
 | `TYPESAFE_ENV` | unset | Optional explicitly selected private Jev env file |
 | `OPENAI_API_KEY` | unset | Optional OpenAI text embeddings |
 
@@ -91,6 +92,7 @@ Jev is pinned to `jev-1.13.0`; GBrain is pinned to v0.48.2.0 plus the compact pr
 ## What is included
 
 - Jev relevance ranking over retrieved candidates, with bounded timeouts and baseline fallback
+- `read_pack`: choose notes from a closed scope and one-line summary index, then drop misses before they enter context. The trial is [benchmarks/read-pack/RESULTS.md](benchmarks/read-pack/RESULTS.md)
 - capture-to-connection judgments with literal source evidence and source/target revisions
 - conditional owner graph batches, idempotent receipts and provenance-preserving undo
 - persistent, source-scoped operation history
@@ -103,7 +105,7 @@ Use `bun run client call <tool> '<json>'` for other upstream MCP tools. Whole-pa
 
 This is a working preview, not a finished autonomous maintenance system. General fact/entity/contradiction enrichment, automatic prose editing, the private editorial controller and the personal Android viewer are not included. Captured role classification is an annotation, not an automatic type migration. Semantic links can be wrong; inspect their evidence and history.
 
-Jev being unavailable does not undo a saved capture. The response exposes the enrichment failure; search retains its baseline results. Existing approved capture graph packets can be resumed with Jev disabled. A small synthetic Jev off/on comparison is available in [benchmarks/RESULTS.md](benchmarks/RESULTS.md); it is not a general benchmark.
+Jev being unavailable does not undo a saved capture. The response exposes the enrichment failure; search retains its baseline results. Existing approved capture graph packets can be resumed with Jev disabled. A small synthetic Jev off/on comparison is available in [benchmarks/RESULTS.md](benchmarks/RESULTS.md); it is not a general benchmark. The read-pack trial is separate and does not show a retrieval improvement on its synthetic questions.
 
 The integration's native usage record does not include embedding or other provider costs. Model keys and document content are not included in public examples or test fixtures.
 
@@ -112,6 +114,8 @@ The integration's native usage record does not include embedding or other provid
 ```sh
 bun test tests
 ```
+
+Run the read-pack structural replay with `python3 benchmarks/read-pack/run.py --structural-only`. To rerun the live trial, explicitly set `TYPESAFE_ENV` to your credential file and omit the flag; this replaces the recorded trial results.
 
 The tests use synthetic data and disposable directories. Real-provider smoke testing is separate and requires your own credentials. See [VERIFICATION.md](VERIFICATION.md) for what was actually checked.
 

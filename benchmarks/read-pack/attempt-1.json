@@ -1,0 +1,733 @@
+{
+  "started_at": "2026-09-26T14:30:45.910005+00:00",
+  "fixture_sha256": "64779b17190ec21a2c28fb3fd75ea7ade1146717a8bead01c8035fe4e43e907a",
+  "policy": {
+    "scope_min": 0.45,
+    "summary_score_min": 2,
+    "fulltext_min": 0.55,
+    "injection_max": 0.7,
+    "max_scopes": 2,
+    "top_k": 5,
+    "partial_max": 4
+  },
+  "structural": [
+    {
+      "id": "paraphrase",
+      "passed": false,
+      "reasons": [
+        "dropped []"
+      ],
+      "packet": {
+        "task": "structural: paraphrase",
+        "skipped": null,
+        "partial": false,
+        "scopes": [
+          "harbor"
+        ],
+        "pages": [
+          {
+            "slug": "notes/dock-rule",
+            "text": "Check each dock instrument every fortnight. This replaces the previous shorter cadence. FORTNIGHT MARKER.",
+            "summary_score": 3.4,
+            "summary_confidence": null,
+            "keep": 0.91,
+            "inject": 0.02
+          }
+        ],
+        "dropped": [],
+        "excluded_stale": [],
+        "judged_slugs": [
+          "notes/theater",
+          "notes/dock-rule"
+        ],
+        "summary_scores": [
+          {
+            "slug": "notes/theater",
+            "score": 0.2,
+            "confidence": null,
+            "index": 0
+          },
+          {
+            "slug": "notes/dock-rule",
+            "score": 3.4,
+            "confidence": null,
+            "index": 1
+          }
+        ],
+        "scope_scores": {
+          "bookmarks": 0.07,
+          "cedar": 0.1,
+          "checks": 0.04,
+          "harbor": 0.93,
+          "relay": 0.06,
+          "sessions": 0.05
+        },
+        "fallback": null,
+        "degraded": null,
+        "baseline": [],
+        "usage": {
+          "input_tokens": 33,
+          "output_tokens": 6
+        },
+        "stages": [
+          {
+            "name": "read-pack-scope",
+            "elapsed_ms": 2,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          },
+          {
+            "name": "read-pack-summary",
+            "elapsed_ms": 2,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          },
+          {
+            "name": "read-pack-fulltext",
+            "elapsed_ms": 2,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          }
+        ],
+        "elapsed_ms": 9
+      }
+    },
+    {
+      "id": "both",
+      "passed": true,
+      "reasons": [],
+      "packet": {
+        "task": "structural: both",
+        "skipped": null,
+        "partial": false,
+        "scopes": [
+          "cedar",
+          "harbor"
+        ],
+        "pages": [
+          {
+            "slug": "notes/dock-rule",
+            "text": "Check each dock instrument every fortnight. This replaces the previous shorter cadence. FORTNIGHT MARKER.",
+            "summary_score": 3.3,
+            "summary_confidence": null,
+            "keep": 0.86,
+            "inject": 0.02
+          },
+          {
+            "slug": "notes/copy-rule",
+            "text": "Nightly copies are kept for 30 days. This replaced the previous shorter window. THIRTY DAY MARKER.",
+            "summary_score": 3.2,
+            "summary_confidence": null,
+            "keep": 0.84,
+            "inject": 0.02
+          }
+        ],
+        "dropped": [],
+        "excluded_stale": [],
+        "judged_slugs": [
+          "notes/copy-archive",
+          "notes/copy-rule",
+          "notes/theater",
+          "notes/dock-rule"
+        ],
+        "summary_scores": [
+          {
+            "slug": "notes/copy-archive",
+            "score": 0.4,
+            "confidence": null,
+            "index": 0
+          },
+          {
+            "slug": "notes/copy-rule",
+            "score": 3.2,
+            "confidence": null,
+            "index": 1
+          },
+          {
+            "slug": "notes/theater",
+            "score": 0.4,
+            "confidence": null,
+            "index": 2
+          },
+          {
+            "slug": "notes/dock-rule",
+            "score": 3.3,
+            "confidence": null,
+            "index": 3
+          }
+        ],
+        "scope_scores": {
+          "bookmarks": 0.04,
+          "cedar": 0.84,
+          "checks": 0.03,
+          "harbor": 0.81,
+          "relay": 0.04,
+          "sessions": 0.05
+        },
+        "fallback": null,
+        "degraded": null,
+        "baseline": [],
+        "usage": {
+          "input_tokens": 33,
+          "output_tokens": 6
+        },
+        "stages": [
+          {
+            "name": "read-pack-scope",
+            "elapsed_ms": 2,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          },
+          {
+            "name": "read-pack-summary",
+            "elapsed_ms": 2,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          },
+          {
+            "name": "read-pack-fulltext",
+            "elapsed_ms": 2,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          }
+        ],
+        "elapsed_ms": 8
+      }
+    },
+    {
+      "id": "thin",
+      "passed": true,
+      "reasons": [],
+      "packet": {
+        "task": "structural: thin",
+        "skipped": null,
+        "partial": false,
+        "scopes": [
+          "relay"
+        ],
+        "pages": [],
+        "dropped": [],
+        "excluded_stale": [],
+        "judged_slugs": [
+          "notes/relay"
+        ],
+        "summary_scores": [
+          {
+            "slug": "notes/relay",
+            "score": 0.4,
+            "confidence": null,
+            "index": 0
+          }
+        ],
+        "scope_scores": {
+          "bookmarks": 0.04,
+          "cedar": 0.05,
+          "checks": 0.03,
+          "harbor": 0.05,
+          "relay": 0.8,
+          "sessions": 0.04
+        },
+        "fallback": "search",
+        "degraded": null,
+        "baseline": [
+          {
+            "slug": "scopes/checks",
+            "title": "Fixture checks",
+            "excerpt": "Current standing checks used only by the structural fixture."
+          }
+        ],
+        "usage": {
+          "input_tokens": 22,
+          "output_tokens": 4
+        },
+        "stages": [
+          {
+            "name": "read-pack-scope",
+            "elapsed_ms": 3,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          },
+          {
+            "name": "read-pack-summary",
+            "elapsed_ms": 3,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          }
+        ],
+        "elapsed_ms": 31
+      }
+    },
+    {
+      "id": "none",
+      "passed": true,
+      "reasons": [],
+      "packet": {
+        "task": "structural: none",
+        "skipped": null,
+        "partial": false,
+        "scopes": [],
+        "pages": [],
+        "dropped": [],
+        "excluded_stale": [],
+        "judged_slugs": [],
+        "summary_scores": [],
+        "scope_scores": {
+          "bookmarks": 0.05,
+          "cedar": 0.07,
+          "checks": 0.03,
+          "harbor": 0.08,
+          "relay": 0.04,
+          "sessions": 0.06
+        },
+        "fallback": "search",
+        "degraded": null,
+        "baseline": [
+          {
+            "slug": "scopes/checks",
+            "title": "Fixture checks",
+            "excerpt": "Current standing checks used only by the structural fixture."
+          }
+        ],
+        "usage": {
+          "input_tokens": 11,
+          "output_tokens": 2
+        },
+        "stages": [
+          {
+            "name": "read-pack-scope",
+            "elapsed_ms": 3,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          }
+        ],
+        "elapsed_ms": 28
+      }
+    },
+    {
+      "id": "injection",
+      "passed": true,
+      "reasons": [],
+      "packet": {
+        "task": "structural: injection",
+        "skipped": null,
+        "partial": false,
+        "scopes": [
+          "bookmarks"
+        ],
+        "pages": [],
+        "dropped": [
+          {
+            "slug": "notes/bookmark-tip",
+            "reason": "injection",
+            "keep": 0.84,
+            "inject": 0.96
+          }
+        ],
+        "excluded_stale": [],
+        "judged_slugs": [
+          "notes/bookmark-tip"
+        ],
+        "summary_scores": [
+          {
+            "slug": "notes/bookmark-tip",
+            "score": 3.7,
+            "confidence": null,
+            "index": 0
+          }
+        ],
+        "scope_scores": {
+          "bookmarks": 0.91,
+          "cedar": 0.08,
+          "checks": 0.03,
+          "harbor": 0.1,
+          "relay": 0.04,
+          "sessions": 0.05
+        },
+        "fallback": null,
+        "degraded": null,
+        "baseline": [],
+        "usage": {
+          "input_tokens": 33,
+          "output_tokens": 6
+        },
+        "stages": [
+          {
+            "name": "read-pack-scope",
+            "elapsed_ms": 3,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          },
+          {
+            "name": "read-pack-summary",
+            "elapsed_ms": 2,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          },
+          {
+            "name": "read-pack-fulltext",
+            "elapsed_ms": 2,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          }
+        ],
+        "elapsed_ms": 9
+      }
+    },
+    {
+      "id": "partial",
+      "passed": true,
+      "reasons": [],
+      "packet": {
+        "task": "structural: partial",
+        "skipped": null,
+        "partial": true,
+        "scopes": [
+          "sessions"
+        ],
+        "pages": [
+          {
+            "slug": "notes/session-04-nail",
+            "text": "A jar of nails was sorted by size. NAIL MARKER.",
+            "summary_score": 3.5,
+            "summary_confidence": null,
+            "keep": 0.88,
+            "inject": 0.01
+          },
+          {
+            "slug": "notes/session-03-ink",
+            "text": "The empty ink bottle was replaced. INK MARKER.",
+            "summary_score": 3.5,
+            "summary_confidence": null,
+            "keep": 0.88,
+            "inject": 0.01
+          },
+          {
+            "slug": "notes/session-02-hinge",
+            "text": "The cabinet hinge was tightened. HINGE MARKER.",
+            "summary_score": 3.5,
+            "summary_confidence": null,
+            "keep": 0.88,
+            "inject": 0.01
+          },
+          {
+            "slug": "notes/session-01-paper",
+            "text": "A ream of paper was bought for the desk. PAPER MARKER.",
+            "summary_score": 3.5,
+            "summary_confidence": null,
+            "keep": 0.88,
+            "inject": 0.01
+          }
+        ],
+        "dropped": [],
+        "excluded_stale": [],
+        "judged_slugs": [
+          "notes/session-04-nail",
+          "notes/session-03-ink",
+          "notes/session-02-hinge",
+          "notes/session-01-paper"
+        ],
+        "summary_scores": [
+          {
+            "slug": "notes/session-04-nail",
+            "score": 3.5,
+            "confidence": null,
+            "index": 0
+          },
+          {
+            "slug": "notes/session-03-ink",
+            "score": 3.5,
+            "confidence": null,
+            "index": 1
+          },
+          {
+            "slug": "notes/session-02-hinge",
+            "score": 3.5,
+            "confidence": null,
+            "index": 2
+          },
+          {
+            "slug": "notes/session-01-paper",
+            "score": 3.5,
+            "confidence": null,
+            "index": 3
+          }
+        ],
+        "scope_scores": {
+          "bookmarks": 0.04,
+          "cedar": 0.04,
+          "checks": 0.03,
+          "harbor": 0.05,
+          "relay": 0.03,
+          "sessions": 0.9
+        },
+        "fallback": null,
+        "degraded": null,
+        "baseline": [],
+        "usage": {
+          "input_tokens": 33,
+          "output_tokens": 6
+        },
+        "stages": [
+          {
+            "name": "read-pack-scope",
+            "elapsed_ms": 3,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          },
+          {
+            "name": "read-pack-summary",
+            "elapsed_ms": 3,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          },
+          {
+            "name": "read-pack-fulltext",
+            "elapsed_ms": 2,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          }
+        ],
+        "elapsed_ms": 9
+      }
+    },
+    {
+      "id": "invented",
+      "passed": true,
+      "reasons": [],
+      "packet": {
+        "task": "structural: invented",
+        "skipped": null,
+        "partial": false,
+        "scopes": [],
+        "pages": [],
+        "dropped": [],
+        "excluded_stale": [],
+        "judged_slugs": [],
+        "summary_scores": [],
+        "scope_scores": {},
+        "fallback": "search",
+        "degraded": "invalid_structure",
+        "baseline": [
+          {
+            "slug": "scopes/checks",
+            "title": "Fixture checks",
+            "excerpt": "Current standing checks used only by the structural fixture."
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0
+        },
+        "stages": [
+          {
+            "name": "read-pack-scope",
+            "elapsed_ms": 2,
+            "failure": "invalid_structure",
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        ],
+        "elapsed_ms": 24
+      }
+    },
+    {
+      "id": "timeout",
+      "passed": true,
+      "reasons": [],
+      "packet": {
+        "task": "structural: timeout",
+        "skipped": null,
+        "partial": false,
+        "scopes": [],
+        "pages": [],
+        "dropped": [],
+        "excluded_stale": [],
+        "judged_slugs": [],
+        "summary_scores": [],
+        "scope_scores": {},
+        "fallback": "search",
+        "degraded": "timeout",
+        "baseline": [
+          {
+            "slug": "scopes/checks",
+            "title": "Fixture checks",
+            "excerpt": "Current standing checks used only by the structural fixture."
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0
+        },
+        "stages": [
+          {
+            "name": "read-pack-scope",
+            "elapsed_ms": 8003,
+            "failure": "timeout",
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        ],
+        "elapsed_ms": 8029
+      }
+    },
+    {
+      "id": "invalid",
+      "passed": true,
+      "reasons": [],
+      "packet": {
+        "task": "structural: invalid",
+        "skipped": null,
+        "partial": false,
+        "scopes": [],
+        "pages": [],
+        "dropped": [],
+        "excluded_stale": [],
+        "judged_slugs": [],
+        "summary_scores": [],
+        "scope_scores": {},
+        "fallback": "search",
+        "degraded": "invalid_structure",
+        "baseline": [
+          {
+            "slug": "scopes/checks",
+            "title": "Fixture checks",
+            "excerpt": "Current standing checks used only by the structural fixture."
+          }
+        ],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0
+        },
+        "stages": [
+          {
+            "name": "read-pack-scope",
+            "elapsed_ms": 3,
+            "failure": "invalid_structure",
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        ],
+        "elapsed_ms": 30
+      }
+    },
+    {
+      "id": "stale",
+      "passed": true,
+      "reasons": [],
+      "packet": {
+        "task": "structural: stale",
+        "skipped": null,
+        "partial": false,
+        "scopes": [
+          "checks"
+        ],
+        "pages": [
+          {
+            "slug": "notes/fresh-rule",
+            "text": "FRESH RULE MARKER. The current check stands.",
+            "summary_score": 3.8,
+            "summary_confidence": null,
+            "keep": 0.9,
+            "inject": 0.01
+          }
+        ],
+        "dropped": [],
+        "excluded_stale": [
+          "notes/stale-rule"
+        ],
+        "judged_slugs": [
+          "notes/fresh-rule"
+        ],
+        "summary_scores": [
+          {
+            "slug": "notes/fresh-rule",
+            "score": 3.8,
+            "confidence": null,
+            "index": 0
+          }
+        ],
+        "scope_scores": {
+          "bookmarks": 0.03,
+          "cedar": 0.04,
+          "checks": 0.96,
+          "harbor": 0.05,
+          "relay": 0.03,
+          "sessions": 0.04
+        },
+        "fallback": null,
+        "degraded": null,
+        "baseline": [],
+        "usage": {
+          "input_tokens": 33,
+          "output_tokens": 6
+        },
+        "stages": [
+          {
+            "name": "read-pack-scope",
+            "elapsed_ms": 3,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          },
+          {
+            "name": "read-pack-summary",
+            "elapsed_ms": 4,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          },
+          {
+            "name": "read-pack-fulltext",
+            "elapsed_ms": 2,
+            "failure": null,
+            "input_tokens": 11,
+            "output_tokens": 2
+          }
+        ],
+        "elapsed_ms": 11
+      }
+    },
+    {
+      "id": "exact",
+      "passed": true,
+      "reasons": [],
+      "packet": {
+        "task": "notes/dock-rule",
+        "skipped": "exact",
+        "partial": false,
+        "scopes": [],
+        "pages": [],
+        "dropped": [],
+        "excluded_stale": [],
+        "judged_slugs": [],
+        "summary_scores": [],
+        "scope_scores": {},
+        "fallback": null,
+        "degraded": null,
+        "baseline": [],
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0
+        },
+        "stages": [],
+        "elapsed_ms": 0
+      }
+    }
+  ],
+  "structural_passed": false
+}

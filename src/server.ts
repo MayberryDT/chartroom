@@ -30,7 +30,9 @@ try {
  const enabled=process.env.CHARTROOM_JEV!=='off';
  installLinkBatch();installJevEnrichment();
  if(enabled)installJevProductionPaths();
- operations.push({name:'chartroom_status',description:'Chartroom runtime features and model configuration; no credentials.',scope:'read',params:{},handler:async()=>({version:'0.1.0',upstream:'0.48.2.0',jev:{enabled,configured:!!(process.env.TYPESAFE_API_KEY||process.env.JEV_API_KEY||process.env.TYPESAFE_ENV),model:'jev-1.13.0'},retrieval:process.env.OPENAI_API_KEY?'hybrid':'keyword-only',maintenance:'Explicit bounded maintenance_jev_drain; no background scheduler'})});
+ const {installReadPack}=await import('./read-pack.ts');
+ installReadPack();
+ operations.push({name:'chartroom_status',description:'Chartroom runtime features and model configuration; no credentials.',scope:'read',params:{},handler:async()=>({version:'0.1.0',upstream:'0.48.2.0',jev:{enabled,configured:!!(process.env.TYPESAFE_API_KEY||process.env.JEV_API_KEY||process.env.TYPESAFE_ENV),model:'jev-1.13.0'},retrieval:process.env.OPENAI_API_KEY?'hybrid':'keyword-only',read_pack:true,maintenance:'Explicit bounded maintenance_jev_drain; no background scheduler'})});
  installWorkHistory();
  console.error(`Chartroom MCP: http://127.0.0.1:${port}/mcp\nClient token file: ${tokenPath}\nJev: ${enabled?'enabled (requires TypeSafe key)':'off'}`);
  await runServeHttp(engine,{port,bind:'127.0.0.1',tokenTtl:86400,enableDcr:false,suppressBootstrapToken:true});
